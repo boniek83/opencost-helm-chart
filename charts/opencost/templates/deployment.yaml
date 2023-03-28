@@ -42,6 +42,8 @@ spec:
       {{- with .Values.opencost.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
+      {{- with .Values.priorityClassName }}
+      priorityClassName: {{ . }}
       {{- end }}
       {{- with .Values.opencost.affinity }}
       affinity:
